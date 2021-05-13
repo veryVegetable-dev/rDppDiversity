@@ -12,5 +12,3 @@
 add<-function(a,b) {
   a+b
 }
-
-devtools::document()
