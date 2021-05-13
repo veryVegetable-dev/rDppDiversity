@@ -17,8 +17,8 @@ public:
 
     DPPDiversity(): N(0), d(0) {}
     void init(
-            std::vector<std::vector<float> > item_representations,
-            std::vector<float> item_ratings);
+            const std::vector<std::vector<float> > &item_representations,
+            const std::vector<float> &item_ratings);
     void select(int n, std::vector<std::pair<int, float> >* res);
     void show_weighted_corr_mat() {
         std::cout << corr_mat << std::endl;

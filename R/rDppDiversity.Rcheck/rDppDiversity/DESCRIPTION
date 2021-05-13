@@ -1,0 +1,23 @@
+Package: rDppDiversity
+Title: find best subset with both high diversity and relevance using
+        DPP MAP
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "sining",
+           family = "ng",
+           role = c("aut", "cre"),
+           email = "sining_ng@icloud.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: find best subset with both high diversity and relevance using DPP MAP.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+LinkingTo: Rcpp
+Imports: Rcpp
+NeedsCompilation: yes
+Packaged: 2021-05-13 14:09:35 UTC; menglingwu
+Author: sining ng [aut, cre] (<https://orcid.org/YOUR-ORCID-ID>)
+Maintainer: sining ng <sining_ng@icloud.com>
+Built: R 3.6.1; x86_64-apple-darwin15.6.0; 2021-05-13 14:11:31 UTC; unix

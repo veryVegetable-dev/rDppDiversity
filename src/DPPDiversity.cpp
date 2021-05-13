@@ -4,8 +4,8 @@
 
 
 void DPPDiversity::init(
-        std::vector<std::vector<float> > item_representations,
-        std::vector<float> item_ratings) {
+        const std::vector<std::vector<float> > &item_representations,
+        const std::vector<float> &item_ratings) {
     N = item_representations.size();
     if (N == 0 || item_ratings.size() != N)
         return;

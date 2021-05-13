@@ -1,0 +1,121 @@
+* using log directory ‘/Users/menglingwu/Documents/2021/coding/personal_projects/rDppDiversity/R/rDppDiversity.Rcheck’
+* using R version 3.6.1 (2019-07-05)
+* using platform: x86_64-apple-darwin15.6.0 (64-bit)
+* using session charset: UTF-8
+* checking for file ‘rDppDiversity/DESCRIPTION’ ... OK
+* this is package ‘rDppDiversity’ version ‘0.0.0.9000’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... WARNING
+Subdirectory ‘src’ contains:
+  CMakeLists.txt testDpp.r
+These are unlikely file names for src files.
+
+In addition to the above warning(s), found the following notes:
+
+Found the following apparent object files/libraries:
+  src/cmake-build-debug/CMakeFiles/src.dir/DPPDiversity.cpp.o
+  src/cmake-build-debug/CMakeFiles/src.dir/main.cpp.o
+Object files/libraries should not be included in a source package.
+* checking if there is a namespace ... OK
+* checking for executable files ... WARNING
+Found the following executable files:
+  src/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_C.bin
+  src/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin
+  src/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.out
+  src/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.out
+  src/cmake-build-debug/CMakeFiles/feature_tests.bin
+  src/cmake-build-debug/src
+Source packages should not contain undeclared executable files.
+See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  src/deps/eigen-3.3.9/.hgeol
+  src/deps/eigen-3.3.9/bench/btl/libs/mtl4/.kdbgrc.main
+  src/deps/eigen-3.3.9/doc/examples/.krazy
+  src/deps/eigen-3.3.9/doc/snippets/.krazy
+  src/.idea
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
+* checking for portable file names ... NOTE
+Found the following non-portable file paths:
+  rDppDiversity/src/deps/eigen-3.3.9/doc/examples/Tutorial_ReductionsVisitorsBroadcasting_broadcast_1nn.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/examples/Tutorial_ReductionsVisitorsBroadcasting_broadcast_simple.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/examples/Tutorial_ReductionsVisitorsBroadcasting_broadcast_simple_rowwise.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/examples/Tutorial_ReductionsVisitorsBroadcasting_reductions_bool.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/examples/Tutorial_ReductionsVisitorsBroadcasting_reductions_norm.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/examples/Tutorial_ReductionsVisitorsBroadcasting_reductions_operatornorm.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/snippets/MatrixBase_template_int_int_block_int_int_int_int.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/snippets/MatrixBase_template_int_int_bottomLeftCorner_int_int.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/snippets/MatrixBase_template_int_int_bottomRightCorner_int_int.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/snippets/MatrixBase_template_int_int_topLeftCorner_int_int.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/snippets/MatrixBase_template_int_int_topRightCorner_int_int.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/snippets/SelfAdjointEigenSolver_SelfAdjointEigenSolver_MatrixType.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/doc/snippets/SelfAdjointEigenSolver_SelfAdjointEigenSolver_MatrixType2.cpp
+  rDppDiversity/src/deps/eigen-3.3.9/unsupported/Eigen/CXX11/src/Tensor/TensorSyclConvertToDeviceExpression.h
+  rDppDiversity/src/deps/eigen-3.3.9/unsupported/Eigen/CXX11/src/TensorSymmetry/util/TemplateGroupTheory.h
+  rDppDiversity/src/deps/eigen-3.3.9/unsupported/Eigen/src/NonLinearOptimization/HybridNonLinearSolver.h
+  rDppDiversity/src/deps/eigen-3.3.9/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsPacketMath.h
+  rDppDiversity/src/deps/eigen-3.3.9/unsupported/Eigen/src/SpecialFunctions/arch/CUDA/CudaSpecialFunctions.h
+
+Tarballs are only required to store paths of up to 100 bytes and cannot
+store those of more than 256 bytes, with restrictions including to 100
+bytes for the final component.
+See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘rDppDiversity’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking for GNU extensions in Makefiles ... WARNING
+Found the following file(s) containing GNU extensions:
+  src/cmake-build-debug/Makefile
+Portable Makefiles do not use GNU extensions such as +=, :=, $(shell),
+$(wildcard), ifeq ... endif, .NOTPARALLEL See section ‘Writing portable
+packages’ in the ‘Writing R Extensions’ manual.
+* checking include directives in Makefiles ... OK
+* checking compiled code ... NOTE
+File ‘rDppDiversity/libs/rDppDiversity.so’:
+  Found ‘__ZNSt3__14coutE’, possibly from ‘std::cout’ (C++)
+    Object: ‘main.o’
+
+Compiled code should not call entry points which might terminate R nor
+write to stdout/stderr instead of to the console, nor use Fortran I/O
+nor system RNGs.
+
+See ‘Writing portable packages’ in the ‘Writing R Extensions’ manual.
+* checking examples ... OK
+* checking PDF version of manual ... WARNING
+LaTeX errors when creating PDF version.
+This typically indicates Rd problems.
+* checking PDF version of manual without hyperrefs or index ... ERROR
+Re-running with no redirection of stdout/stderr.
+* DONE
+Status: 1 ERROR, 4 WARNINGs, 3 NOTEs

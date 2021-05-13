@@ -1,0 +1,31 @@
+* installing *source* package ‘rDppDiversity’ ...
+** using staged installation
+** libs
+clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c DPPDiversity.cpp -o DPPDiversity.o
+clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c RDppDiversity.cpp -o RDppDiversity.o
+In file included from RDppDiversity.cpp:1:
+In file included from /Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include/Rcpp.h:57:
+/Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include/Rcpp/DataFrame.h:136:18: warning: unused variable 'data' [-Wunused-variable]
+            SEXP data = Parent::get__();
+                 ^
+1 warning generated.
+clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c RcppExports.cpp -o RcppExports.o
+In file included from RcppExports.cpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include/Rcpp.h:57:
+/Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include/Rcpp/DataFrame.h:136:18: warning: unused variable 'data' [-Wunused-variable]
+            SEXP data = Parent::get__();
+                 ^
+1 warning generated.
+clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c main.cpp -o main.o
+clang++ -std=gnu++11 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o rDppDiversity.so DPPDiversity.o RDppDiversity.o RcppExports.o main.o -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+installing to /Users/menglingwu/Documents/2021/coding/personal_projects/rDppDiversity/R/rDppDiversity.Rcheck/00LOCK-rDppDiversity/00new/rDppDiversity/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rDppDiversity)

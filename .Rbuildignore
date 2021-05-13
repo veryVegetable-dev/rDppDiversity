@@ -3,3 +3,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^rDppDiversity\.Rproj$
+^README\.Rmd$
+^LICENSE\.md$
