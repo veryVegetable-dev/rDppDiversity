@@ -1,11 +1,11 @@
 #include "DPPDiversity.h"
 #include <cmath>
-
+#include <unordered_set>
 
 
 void DPPDiversity::init(
-        const std::vector<std::vector<float> > &item_representations,
-        const std::vector<float> &item_ratings) {
+        std::vector<std::vector<float> > item_representations,
+        std::vector<float> item_ratings) {
     N = item_representations.size();
     if (N == 0 || item_ratings.size() != N)
         return;
@@ -23,15 +23,17 @@ void DPPDiversity::init(
     corr_mat = weighted_corr_mat.transpose() * weighted_corr_mat;
 }
 
-void DPPDiversity::select(int n, std::unordered_map<int, float>* res) {
+void DPPDiversity::select(int n, std::vector<std::pair<int, float> >* res) {
     if (n > N || N <= 0) return;
+    std::unordered_set<int> selected;
     // init
     int init_elem = 0;
     for (int i = init_elem + 1; i < N; i++) {
         if (corr_mat(i, i) > corr_mat(init_elem, init_elem))
             init_elem = i;
     }
-    (*res)[init_elem] = corr_mat(init_elem, init_elem);
+    res->emplace_back(init_elem, corr_mat(init_elem, init_elem));
+    selected.insert(init_elem);
     n--;
     // iter
     std::unordered_map<int, std::vector<float> > cond_prob_mp;
@@ -39,7 +41,7 @@ void DPPDiversity::select(int n, std::unordered_map<int, float>* res) {
     while (n-- > 0) {
         int i = 0, curr_added_elem = 0;
         for (; i < N; i++) {
-            if (res->find(i) != res->end()) {
+            if (selected.find(i) != selected.end()) {
                 if (curr_added_elem == i)
                     curr_added_elem++;
                 continue;
@@ -51,7 +53,8 @@ void DPPDiversity::select(int n, std::unordered_map<int, float>* res) {
                 curr_added_elem = i;
             }
         }
-        (*res)[curr_added_elem] = corr_mat(curr_added_elem, curr_added_elem);
+        res->emplace_back(curr_added_elem, corr_mat(curr_added_elem, curr_added_elem));
+        selected.insert(curr_added_elem);
         last_added_elem = curr_added_elem;
     }
 }

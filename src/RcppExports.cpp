@@ -6,19 +6,21 @@
 using namespace Rcpp;
 
 // meanC
-NumericVector meanC(NumericVector item_ratings);
-RcppExport SEXP _rDppDiversity_meanC(SEXP item_ratingsSEXP) {
+Rcpp::NumericVector meanC(Rcpp::List item_representations, Rcpp::NumericVector ratings, int n);
+RcppExport SEXP _rDppDiversity_meanC(SEXP item_representationsSEXP, SEXP ratingsSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type item_ratings(item_ratingsSEXP);
-    rcpp_result_gen = Rcpp::wrap(meanC(item_ratings));
+    Rcpp::traits::input_parameter< Rcpp::List >::type item_representations(item_representationsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type ratings(ratingsSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(meanC(item_representations, ratings, n));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rDppDiversity_meanC", (DL_FUNC) &_rDppDiversity_meanC, 1},
+    {"_rDppDiversity_meanC", (DL_FUNC) &_rDppDiversity_meanC, 3},
     {NULL, NULL, 0}
 };
 
