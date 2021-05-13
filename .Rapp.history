@@ -1,0 +1,33 @@
+library(Rcpp)
+install(Rcpp)
+install.packages("Rcpp")
+library(Rcpp)
+cppFunction('int add(int x, int y, int z) {#
+  int sum = x + y + z;#
+  return sum;#
+}')
+add
+add(1, 2, 3)
+cppFunction('NumericVector rowSumsC(NumericMatrix x) {#
+  int nrow = x.nrow(), ncol = x.ncol();#
+  NumericVector out(nrow);#
+#
+  for (int i = 0; i < nrow; i++) {#
+    double total = 0;#
+    for (int j = 0; j < ncol; j++) {#
+      total += x(i, j);#
+    }#
+    out[i] = total;#
+  }#
+  return out;#
+}')
+set.seed(1014)#
+x <- matrix(sample(100), 10)
+rowSumsC(x)
+?library
+?INSTALL
+install.packages("usethis")
+usethis::create_package(path = "/Users/menglingwu/Documents/2021/coding/personal_projects/r_dpp_diversity")
+usethis::create_package(path = "/Users/menglingwu/Documents/2021/coding/personal_projects/rDppDiversity")
+install.packages("renv")
+renv::init()
