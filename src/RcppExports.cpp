@@ -6,13 +6,13 @@
 using namespace Rcpp;
 
 // meanC
-double meanC(NumericVector x);
-RcppExport SEXP _rDppDiversity_meanC(SEXP xSEXP) {
+NumericVector meanC(NumericVector item_ratings);
+RcppExport SEXP _rDppDiversity_meanC(SEXP item_ratingsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(meanC(x));
+    Rcpp::traits::input_parameter< NumericVector >::type item_ratings(item_ratingsSEXP);
+    rcpp_result_gen = Rcpp::wrap(meanC(item_ratings));
     return rcpp_result_gen;
 END_RCPP
 }

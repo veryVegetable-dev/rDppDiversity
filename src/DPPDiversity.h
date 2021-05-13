@@ -12,22 +12,14 @@
 class DPPDiversity {
 
 public:
-    typedef std::unordered_map<std::string, int> t_mapping;
-    typedef std::unordered_map<int, std::string> t_mapping_reverse;
-    typedef std::pair<float, std::vector<float> > t_item_representation;
-    typedef Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic> ItemMatrix;
+    typedef Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic> Mat;
     typedef Eigen::Matrix<float, Eigen::Dynamic, 1> RatingVec;
-    typedef Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic> CorrMatrix;
 
-    DPPDiversity(): N(0), d(0), _name_id_mp(nullptr) {}
-    void init(const std::unordered_map<std::string, t_item_representation > &items, int feature_dim);
+    DPPDiversity(): N(0), d(0) {}
+    void init(
+            const std::vector<std::vector<float> > &item_representations,
+            const std::vector<float> &item_ratings);
     void select(int n, std::unordered_map<int, float>* res);
-    void show_id_mapping() {
-        for (const auto &p : *_name_id_mp)
-            std::cout << p.first << " = " << p.second << ";";
-        std::cout << std::endl;
-    }
-    int getN() { return N; }
     void show_weighted_corr_mat() {
         std::cout << corr_mat << std::endl;
     }
@@ -45,11 +37,9 @@ private:
     }
 
     int N; int d;
-    std::shared_ptr<t_mapping> _name_id_mp;
-    std::shared_ptr<t_mapping_reverse> _id_name_mp;
-    ItemMatrix item_mat;
+    Mat item_mat;
     RatingVec rating_vec;
-    CorrMatrix corr_mat;
+    Mat corr_mat;
 };
 
 

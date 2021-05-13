@@ -5,14 +5,9 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-double meanC(NumericVector x) {
-    int n = x.size();
-    double total = 0;
-
-    for(int i = 0; i < n; ++i) {
-        total += x[i];
-    }
-
+NumericVector meanC(NumericVector item_ratings) {
     DPPDiversity dppDiversity;
-    return dppDiversity.getN();
+    std::vector<float> res = {1, 2, 3};
+    NumericVector res_r(res.begin(), res.end());
+    return res_r;
 }
