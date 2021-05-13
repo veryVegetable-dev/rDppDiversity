@@ -6,12 +6,12 @@
 using namespace Rcpp;
 
 // meanC
-Rcpp::NumericVector meanC(Rcpp::List item_representations, Rcpp::NumericVector ratings, int n);
+Rcpp::DataFrame meanC(Rcpp::NumericMatrix item_representations, Rcpp::NumericVector ratings, int n);
 RcppExport SEXP _rDppDiversity_meanC(SEXP item_representationsSEXP, SEXP ratingsSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type item_representations(item_representationsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type item_representations(item_representationsSEXP);
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type ratings(ratingsSEXP);
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(meanC(item_representations, ratings, n));

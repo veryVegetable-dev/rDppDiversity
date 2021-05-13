@@ -4,28 +4,38 @@
 
 
 // [[Rcpp::export]]
-Rcpp::NumericVector meanC(Rcpp::List item_representations, Rcpp::NumericVector ratings, int n) {
+Rcpp::DataFrame meanC(Rcpp::NumericMatrix item_representations, Rcpp::NumericVector ratings, int n) {
     DPPDiversity dppDiversity;
-    int list_n = item_representations.size();
-    if (list_n == 0) {
+    int rows = item_representations.nrow();
+    int cols = item_representations.ncol();
+    if (rows == 0 || cols == 0) {
         Rcpp::NumericVector res(0);
         return res;
     }
-    int d = Rcpp::as<Rcpp::NumericVector>(item_representations[0]).size();
-    std::vector<std::vector<float> > itemsCpp(list_n, std::vector<float>(d));
-    std::vector<float> ratingsCpp(list_n);
-    for (int i = 0; i < list_n; i++) {
+    std::vector<std::vector<float> > itemsCpp(rows, std::vector<float>(cols));
+    std::vector<float> ratingsCpp(rows);
+    for (int i = 0; i < rows; i++) {
         ratingsCpp[i] = ratings[i];
-        Rcpp::NumericVector tmp_items = Rcpp::as<Rcpp::NumericVector>(item_representations[i]);
-        for (int j = 0; j < d; j++)
-            itemsCpp[i][j] = tmp_items[j];
+        for (int j = 0; j < cols; j++)
+            itemsCpp[i][j] = item_representations(i, j);
     }
     dppDiversity.init(itemsCpp, ratingsCpp);
     std::vector<std::pair<int, float> > *res = new std::vector<std::pair<int, float> >();
     dppDiversity.select(n, res);
-    std::vector<float> gain(n);
-    for (size_t i = 0; i < n; i++)
+    std::vector<float> gain(n), id(n);
+    for (size_t i = 0; i < n; i++) {
         gain[i] = (*res)[i].second;
-    Rcpp::NumericVector res_r_1(gain.begin(), gain.end());
-    return res_r_1;
+        id[i] = (*res)[i].first;
+    }
+    Rcpp::NumericVector gainVec(gain.begin(), gain.end());
+    Rcpp::NumericVector idVec(id.begin(), id.end());
+    Rcpp::List tmp(2);
+    Rcpp::CharacterVector names(2);
+    tmp[0] = idVec;
+    tmp[1] = gainVec;
+    names[0] = "id";
+    names[1] = "gain";
+    Rcpp::DataFrame df(tmp);
+    df.attr("names") = names;
+    return df;
 }
