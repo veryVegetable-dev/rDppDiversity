@@ -1,5 +1,5 @@
 Package: rDppDiversity
-Title: DPP Subset Searching Algorithm For R
+Title:Subset Searching Algorithm Using Determinantal Point Processes Greedy MAP For R
 Version: 0.0.1
 Authors@R: 
     person(given = "sining",
