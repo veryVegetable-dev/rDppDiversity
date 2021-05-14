@@ -4,8 +4,8 @@
 
 
 void DPPDiversity::init(
-        std::vector<std::vector<float> > item_representations,
-        std::vector<float> item_ratings) {
+        const std::vector<std::vector<float> > &item_representations,
+        const std::vector<float> &item_ratings) {
     N = item_representations.size();
     if (N == 0 || item_ratings.size() != N)
         return;
@@ -32,7 +32,7 @@ void DPPDiversity::select(int n, std::vector<std::pair<int, float> >* res) {
         if (corr_mat(i, i) > corr_mat(init_elem, init_elem))
             init_elem = i;
     }
-    res->emplace_back(init_elem, corr_mat(init_elem, init_elem));
+    res->emplace_back(init_elem, log(corr_mat(init_elem, init_elem)));
     selected.insert(init_elem);
     n--;
     // iter
@@ -53,8 +53,12 @@ void DPPDiversity::select(int n, std::vector<std::pair<int, float> >* res) {
                 curr_added_elem = i;
             }
         }
-        res->emplace_back(curr_added_elem, corr_mat(curr_added_elem, curr_added_elem));
-        selected.insert(curr_added_elem);
-        last_added_elem = curr_added_elem;
+        float log_det = log(corr_mat(curr_added_elem, curr_added_elem));
+        if (log_det < 0) break;
+        else {
+            res->emplace_back(curr_added_elem, log_det);
+            selected.insert(curr_added_elem);
+            last_added_elem = curr_added_elem;            
+        }
     }
 }

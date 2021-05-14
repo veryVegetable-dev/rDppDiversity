@@ -22,8 +22,9 @@ Rcpp::DataFrame bestSubset(Rcpp::NumericMatrix item_representations, Rcpp::Numer
     dppDiversity.init(itemsCpp, ratingsCpp);
     std::vector<std::pair<int, float> > *res = new std::vector<std::pair<int, float> >();
     dppDiversity.select(n, res);
-    std::vector<float> gain(n), id(n);
-    for (size_t i = 0; i < n; i++) {
+    int valid_n = res->size();
+    std::vector<float> gain(valid_n), id(valid_n);
+    for (size_t i = 0; i < valid_n; i++) {
         gain[i] = (*res)[i].second;
         id[i] = (*res)[i].first;
     }

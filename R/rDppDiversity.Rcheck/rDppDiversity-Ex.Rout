@@ -38,10 +38,8 @@ Type 'q()' to quit R.
 > 
 > library(rDppDiversity)
 > bestSubset(matrix(c(-0.1, -0.15, 0.2, 0.3, -0.2, -0.3), nrow=3, ncol=2, byrow=TRUE), c(1, 2, 3), 3)
-  id         gain
-1  2 1.170000e+00
-2  1 9.620190e-05
-3  0 1.207532e-07
+  id      gain
+1  2 0.1570038
 > 
 > 
 > 
@@ -50,7 +48,7 @@ Type 'q()' to quit R.
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.156 0.012 0.173 0 0 
+Time elapsed:  0.147 0.013 0.164 0 0 
 > grDevices::dev.off()
 null device 
           1 
