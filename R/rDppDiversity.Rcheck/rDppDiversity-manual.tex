@@ -14,13 +14,12 @@
 \begin{description}
 \raggedright{}
 \inputencoding{utf8}
-\item[Title]\AsIs{find best subset with both high diversity and relevance using
-DPP MAP}
-\item[Version]\AsIs{0.0.0.9000}
-\item[Description]\AsIs{find best subset with both high diversity and relevance using DPP MAP.}
+\item[Title]\AsIs{DPP Subset Searching Algorithm For R}
+\item[Version]\AsIs{0.0.1}
+\item[Description]\AsIs{Given item set, item representation vector, and item ratings, find a subset providing a better relevance-diversity trade-off. It's based on the idea introduced in Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity.}
 \item[License]\AsIs{MIT + file LICENSE}
 \item[Encoding]\AsIs{UTF-8}
-\item[LazyData]\AsIs{true}
+\item[LazyData]\AsIs{false}
 \item[Roxygen]\AsIs{list(markdown = TRUE)}
 \item[RoxygenNote]\AsIs{7.1.1}
 \item[LinkingTo]\AsIs{Rcpp}
@@ -31,10 +30,10 @@ DPP MAP}
 \end{description}
 \Rdcontents{\R{} topics documented:}
 \inputencoding{utf8}
-\HeaderA{bestSubset}{Title}{bestSubset}
+\HeaderA{bestSubset}{DPP Subset Searching Algorithm For R}{bestSubset}
 %
 \begin{Description}\relax
-Title
+DPP Subset Searching Algorithm For R
 \end{Description}
 %
 \begin{Usage}
@@ -54,7 +53,7 @@ bestSubset(item_representations, ratings, n)
 \end{Arguments}
 %
 \begin{Value}
-DataFrame with two columns "id" \& "gain"
+DataFrame with two columns id and gain
 \end{Value}
 %
 \begin{Examples}

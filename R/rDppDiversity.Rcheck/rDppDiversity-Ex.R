@@ -12,7 +12,7 @@ nameEx("bestSubset")
 flush(stderr()); flush(stdout())
 
 ### Name: bestSubset
-### Title: Title
+### Title: DPP Subset Searching Algorithm For R
 ### Aliases: bestSubset
 
 ### ** Examples

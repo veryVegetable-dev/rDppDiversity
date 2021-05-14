@@ -31,7 +31,7 @@ Type 'q()' to quit R.
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: bestSubset
-> ### Title: Title
+> ### Title: DPP Subset Searching Algorithm For R
 > ### Aliases: bestSubset
 > 
 > ### ** Examples
@@ -48,7 +48,7 @@ Type 'q()' to quit R.
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.147 0.013 0.164 0 0 
+Time elapsed:  0.159 0.012 0.171 0 0 
 > grDevices::dev.off()
 null device 
           1 

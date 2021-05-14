@@ -4,4 +4,4 @@ Error in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
 Error in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  : 
   pdflatex is not available
 调用tools::texi2pdf()时出了错
-You may want to clean up by 'rm -Rf /var/folders/j0/dy8h49gx13z6jh2r2ry6gfxc0000gn/T//RtmpYsRPww/Rd2pdfba053ef8f671'
+You may want to clean up by 'rm -Rf /var/folders/j0/dy8h49gx13z6jh2r2ry6gfxc0000gn/T//Rtmp8Ue9nn/Rd2pdfc4ec4ba19dde'
