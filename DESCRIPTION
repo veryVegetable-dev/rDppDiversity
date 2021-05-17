@@ -1,13 +1,13 @@
 Package: rDppDiversity
-Title:Subset Searching Algorithm Using Determinantal Point Processes Greedy MAP For R
-Version: 0.0.1
+Title:Subset Searching Algorithm Using Determinantal Point Processes Greedy MAP
+Version: 0.0.2
 Authors@R: 
-    person(given = "sining",
-           family = "ng",
+    person(given = "Sining",
+           family = "Ng",
            role = c("aut", "cre"),
            email = "sining_ng@icloud.com",
            comment = c(ORCID = "https://orcid.org/0000-0003-3463-707X"))
-Description: Given item set, item representation vector, and item ratings, find a subset providing a better relevance-diversity trade-off. It's based on the idea introduced in Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity.
+Description: Given item set, item representation vector, and item ratings, find a subset providing a better relevance-diversity trade-off. It's based on the idea introduced by Laming Chen, Guoxin Zhang, and Hanning Zhou(2017) in [1]Improving the Diversity of Top-N Recommendation via Determinantal Point Process and [2]Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity.
 License: MIT + file LICENSE 
 Encoding: UTF-8
 LazyData: false

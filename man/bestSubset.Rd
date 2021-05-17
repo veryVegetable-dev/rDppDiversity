@@ -2,24 +2,16 @@
 % Please edit documentation in R/RcppExports.R
 \name{bestSubset}
 \alias{bestSubset}
-\title{DPP Subset Searching Algorithm For R}
+\title{Title}
 \usage{
 bestSubset(item_representations, ratings, n)
 }
 \arguments{
-\item{item_representations}{Matrix}
-
-\item{ratings}{Matrix}
-
-\item{n}{int}
+\item{n}{}
 }
 \value{
-DataFrame with two columns id and gain
+
 }
 \description{
-DPP Subset Searching Algorithm For R
-}
-\examples{
-library(rDppDiversity)
-bestSubset(matrix(c(-0.1, -0.15, 0.2, 0.3, -0.2, -0.3), nrow=3, ncol=2, byrow=TRUE), c(1, 2, 3), 3)
+Title
 }

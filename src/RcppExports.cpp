@@ -18,9 +18,26 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// learnItemEmb
+Rcpp::List learnItemEmb(std::string train_data_path, int emb_size, float regularization, float learning_rate, int neg_sample_cnt, int epoch);
+RcppExport SEXP _rDppDiversity_learnItemEmb(SEXP train_data_pathSEXP, SEXP emb_sizeSEXP, SEXP regularizationSEXP, SEXP learning_rateSEXP, SEXP neg_sample_cntSEXP, SEXP epochSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::string >::type train_data_path(train_data_pathSEXP);
+    Rcpp::traits::input_parameter< int >::type emb_size(emb_sizeSEXP);
+    Rcpp::traits::input_parameter< float >::type regularization(regularizationSEXP);
+    Rcpp::traits::input_parameter< float >::type learning_rate(learning_rateSEXP);
+    Rcpp::traits::input_parameter< int >::type neg_sample_cnt(neg_sample_cntSEXP);
+    Rcpp::traits::input_parameter< int >::type epoch(epochSEXP);
+    rcpp_result_gen = Rcpp::wrap(learnItemEmb(train_data_path, emb_size, regularization, learning_rate, neg_sample_cnt, epoch));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rDppDiversity_bestSubset", (DL_FUNC) &_rDppDiversity_bestSubset, 3},
+    {"_rDppDiversity_learnItemEmb", (DL_FUNC) &_rDppDiversity_learnItemEmb, 6},
     {NULL, NULL, 0}
 };
 
