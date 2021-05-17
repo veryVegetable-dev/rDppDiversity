@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{learnItemEmb}
 \alias{learnItemEmb}
-\title{Title}
+\title{Machine learning algorithm to learn item representations maximizing log likelihood under DPP assumption.}
 \usage{
 learnItemEmb(
   train_data_path,
@@ -14,11 +14,26 @@ learnItemEmb(
 )
 }
 \arguments{
-\item{epoch}{}
+\item{train_data_path}{string}
+
+\item{emb_size}{int}
+
+\item{regularization}{float}
+
+\item{learning_rate}{float}
+
+\item{neg_sample_cnt}{int}
+
+\item{epoch}{int}
 }
 \value{
-
+List contains: 1) learned item embedding; 2) item names; 3) log likelihood on each training step.
 }
 \description{
-Title
+Machine learning algorithm to learn item representations maximizing log likelihood under DPP assumption.
+}
+\examples{
+library(rDppDiversity)
+data_path=system.file("extdata", "data.txt", package = "rDppDiversity")
+learnItemEmb(train_data_path=data_path, emb_size=3, regularization=0.1, learning_rate=0.01, neg_sample_cnt=0, epoch=10)
 }

@@ -1,16 +1,16 @@
 Package: rDppDiversity
-Title:Subset Searching Algorithm Using Determinantal Point Processes Greedy MAP
-Version: 0.0.2
+Title: Subset Searching Algorithm Using Determinantal Point Processes Greedy MAP
+Version: 0.0.1
 Authors@R: 
     person(given = "Sining",
            family = "Ng",
            role = c("aut", "cre"),
            email = "sining_ng@icloud.com",
            comment = c(ORCID = "https://orcid.org/0000-0003-3463-707X"))
-Description: Given item set, item representation vector, and item ratings, find a subset providing a better relevance-diversity trade-off. It's based on the idea introduced by Laming Chen, Guoxin Zhang, and Hanning Zhou(2017) in [1]Improving the Diversity of Top-N Recommendation via Determinantal Point Process and [2]Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity.
+Description: Given item set, item representation vector, and item ratings, find a subset with better relevance-diversity trade-off. Also provide machine learning algorithm to learn item representations maximizing log likelihood under DPP assumption. Referrences: [1]Laming Chen, Guoxin Zhang, and Hanning Zhou(2017)<https://lsrs2017.files.wordpress.com/2017/08/lsrs_2017_lamingchen.pdf> [2]Laming Chen, Guoxin Zhang, and Hanning Zhou(2018)<https://papers.nips.cc/paper/2018/file/dbbf603ff0e99629dda5d75b6f75f966-Paper.pdf> [3]Wilhelm, Mark & Ramanathan, Ajith & Bonomo, Alexander & Jain, Sagar & Chi, Ed & Gillenwater, Jennifer(2018)<doi:10.1145/3269206.3272018>.
 License: MIT + file LICENSE 
 Encoding: UTF-8
-LazyData: false
+LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 LinkingTo: Rcpp

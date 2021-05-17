@@ -24,7 +24,7 @@ public:
         std::chrono::system_clock::duration tp = now.time_since_epoch();
         generator = std::default_random_engine(static_cast<unsigned>(tp / std::chrono::microseconds(1)));
         _item_representations_ptr = std::shared_ptr<Mat>(new Mat(_num_items, _emb_size));
-        std::uniform_real_distribution<float > rand = std::uniform_real_distribution<float>(1, 2);
+        std::uniform_real_distribution<float > rand = std::uniform_real_distribution<float>(-1, 1);
         for (size_t i = 0; i < _num_items; i++) {
             for (size_t j = 0; j < _emb_size; j++) {
                 (*_item_representations_ptr)(i, j) = rand(generator);

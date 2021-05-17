@@ -2,16 +2,24 @@
 % Please edit documentation in R/RcppExports.R
 \name{bestSubset}
 \alias{bestSubset}
-\title{Title}
+\title{Given item set, item representation vector, and item ratings, find a subset with better relevance-diversity trade-off.}
 \usage{
 bestSubset(item_representations, ratings, n)
 }
 \arguments{
-\item{n}{}
+\item{item_representations}{Matrix}
+
+\item{ratings}{Vector}
+
+\item{n}{int}
 }
 \value{
-
+DataFrame with 2 columns: id & gain
 }
 \description{
-Title
+Given item set, item representation vector, and item ratings, find a subset with better relevance-diversity trade-off.
+}
+\examples{
+library(rDppDiversity)
+bestSubset(matrix(c(-0.1, -0.15, 0.2, 0.3, -0.2, -0.3), nrow=3, ncol=2, byrow=TRUE), c(1, 2, 3), 3)
 }
