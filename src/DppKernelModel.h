@@ -82,10 +82,16 @@ private:
             subset_kernel_mat(i, i) += _regularization;
         _num_iter++;
         float det_Y = subset_kernel_mat.determinant();
-        _accumulate_log_likelihood += log(det_Y) * label;
+        _accumulate_log_likelihood += log(det_Y);
         float avg_log_likelihood = _accumulate_log_likelihood / _num_iter;
         _iter_log_likelihood_ptr->emplace_back(avg_log_likelihood);
         *(grad) = label / det_Y * subset_kernel_mat.adjoint().transpose() * subset_item_mat;
+        //        std::cout << "index_set = ";
+        //        for (const auto &e:index_set)
+        //            std::cout << e << ",";
+        //        std::cout << " det_Y = " << det_Y;
+        //        std::cout << " avg accumulate_log_likelihood = " << avg_log_likelihood;
+        //        std::cout << std::endl;
     }
 
     void neg_sampling(std::vector<size_t >* res, size_t max_index) {
