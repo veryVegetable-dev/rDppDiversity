@@ -14,20 +14,20 @@ learnItemEmb(
 )
 }
 \arguments{
-\item{train_data_path}{string}
+\item{train_data_path}{A string for text file path. Each line: item_id,item_id,item_id}
 
-\item{emb_size}{int}
+\item{emb_size}{int. ColumnNum for model parameter. While RowNum = number of uniq items parsed in train_data_path}
 
-\item{regularization}{float}
+\item{regularization}{float. Default = 0.1}
 
-\item{learning_rate}{float}
+\item{learning_rate}{float. Generally begin with small learning_rate will train better.}
 
-\item{neg_sample_cnt}{int}
+\item{neg_sample_cnt}{int.}
 
-\item{epoch}{int}
+\item{epoch}{int.}
 }
 \value{
-List contains: 1) learned item embedding; 2) item names; 3) log likelihood on each training step.
+A list contains 1) learned item embedding matrix; 2) item names vector; 3) log likelihood on each training step vector.
 }
 \description{
 Machine learning algorithm to learn item representations maximizing log likelihood under DPP assumption.
@@ -35,5 +35,5 @@ Machine learning algorithm to learn item representations maximizing log likeliho
 \examples{
 library(rDppDiversity)
 data_path=system.file("extdata", "data.txt", package = "rDppDiversity")
-learnItemEmb(train_data_path=data_path, emb_size=3, regularization=0.1, learning_rate=0.01, neg_sample_cnt=0, epoch=10)
+learnItemEmb(data_path, 3, 0.1, 0.01, 0, 10)
 }

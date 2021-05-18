@@ -12,17 +12,17 @@ void DppKernelModel::parse_sample(const std::string &file_path, std::vector<std:
     std::vector<size_t> one_line;
     while (in_file.getline(buffer, MAX_LINE_SIZE)) {
         one_line.clear();
-        const char *delim = ",";
-        char *field;
-        char *buffer_ptr = &buffer[0];
-        while ((field = strsep(&buffer_ptr, delim))) {
+        char *field = strtok(buffer, ",");
+        while (field != nullptr) {
             std::string item(field);
             if (uniq_item.find(item) == uniq_item.end()) {
                 uniq_item[item] = uniq_item.size();
                 item_names->emplace_back(item);
             }
             one_line.emplace_back(uniq_item[item]);
+            field = strtok(nullptr, ",");
         }
         sample_ptr->emplace_back(one_line);
     }
+    in_file.close();
 }

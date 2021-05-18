@@ -7,14 +7,14 @@
 bestSubset(item_representations, ratings, n)
 }
 \arguments{
-\item{item_representations}{Matrix}
+\item{item_representations}{matrix with nrow = num_items and ncol = feature_dim}
 
-\item{ratings}{Vector}
+\item{ratings}{matrix with nrow = num_items and ncol = 1}
 
-\item{n}{int}
+\item{n}{int. subset size}
 }
 \value{
-DataFrame with 2 columns: id & gain
+dataframe with 2 columns: id & gain
 }
 \description{
 Given item set, item representation vector, and item ratings, find a subset with better relevance-diversity trade-off.
